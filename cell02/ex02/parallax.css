@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pimg1, .pimg2 {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.pimg1 {
+    background-image: url('https://picsum.photos/id/1015/1920/1080');
+}
+
+.pimg2 {
+    background-image: url('https://picsum.photos/id/1018/1920/1080');
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.ptext .border {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #111;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.section-dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.section-dark h2 {
+    margin-top: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.section-dark p {
+    font-size: 18px;
+    color: #cccccc;
+}
