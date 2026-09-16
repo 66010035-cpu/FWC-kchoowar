@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
