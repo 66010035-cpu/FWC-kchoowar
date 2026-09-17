@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- บอกเบราว์เซอร์ว่าเอกสารนี้ใช้มาตรฐาน HTML5 -->
+<html lang="en">
+  <!-- กำหนดภาษาหลักของเนื้อหาเป็นภาษาอังกฤษ -->
+  <head>
+    <!-- ส่วนเก็บข้อมูลตั้งค่าของหน้าเว็บ ซึ่งไม่แสดงบนหน้า -->
+    <meta charset="utf-8">
+    <!-- รองรับตัวอักษรภาษาไทยและอักขระพิเศษ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ทำให้ขนาดหน้าเว็บปรับตามหน้าจอมือถือ -->
+    <title>Portfolio</title>
+    <!-- ข้อความที่แสดงบนแท็บของเบราว์เซอร์ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- เรียก Bootstrap CSS เพื่อใช้ระบบแถวและคอลัมน์ -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- เรียก CSS ที่เขียนเองสำหรับหน้าตาเว็บ -->
+  </head>
+  <!-- จบส่วนตั้งค่าของหน้าเว็บ -->
+  <body>
+    <!-- เนื้อหาที่มองเห็นได้ทั้งหมดของหน้าแรก -->
+    <main class="landing-shell">
+      <!-- กรอบหลักที่กำหนดความกว้างและระยะห่างของหน้า -->
+      <section class="intro text-center">
+        <!-- ส่วนหัวของหน้าแรก; text-center เป็นคลาส Bootstrap สำหรับจัดกึ่งกลาง -->
+        <h1 class="landing-title">PORTFOLIO</h1>
+        <!-- หัวเรื่องหลักของเว็บไซต์ -->
+        <p class="lead">Choose a profile to explore our work, skills, and ways to get in touch.</p>
+        <!-- คำอธิบายสั้น ๆ ใต้หัวเรื่อง -->
+      </section>
+      <!-- จบส่วนหัวของหน้าแรก -->
+
+      <section class="row g-4 profile-links" aria-label="Portfolio links">
+        <!-- row และ g-4 ของ Bootstrap จัดการ์ดเป็น 2 คอลัมน์พร้อมช่องว่าง; aria-label ช่วยผู้อ่านหน้าจอ -->
+        <div class="col-md-6">
+          <!-- คอลัมน์ครึ่งหนึ่งของหน้าจอตั้งแต่ขนาด md ขึ้นไป -->
+          <a class="profile-card" href="portfolio-one.html">
+            <!-- การ์ดทั้งใบเป็นลิงก์ไปหน้าโปรไฟล์คนที่หนึ่ง -->
+            <img src="images/rungarun-profile.jpg" alt="Rungarun Fongkerd">
+            <!-- รูปโปรไฟล์ พร้อม alt สำหรับการเข้าถึง -->
+            <span class="profile-card-content">
+              <!-- กล่องข้อความในบัตรโปรไฟล์ -->
+              <span class="card-label">Electrical Engineering Student</span>
+              <!-- ป้ายบอกสถานะการศึกษา -->
+              <span class="card-name">Rungarun Fongkerd</span>
+              <!-- ชื่อของเจ้าของโปรไฟล์ -->
+              <span class="card-action">Open portfolio <span aria-hidden="true">→</span></span>
+              <!-- ข้อความชวนกด; ลูกศรซ่อนไม่ให้โปรแกรมอ่านหน้าจออ่านซ้ำ -->
+            </span>
+            <!-- จบกล่องข้อความในบัตร -->
+          </a>
+          <!-- จบลิงก์โปรไฟล์คนที่หนึ่ง -->
+        </div>
+        <!-- จบคอลัมน์คนที่หนึ่ง -->
+        <div class="col-md-6">
+          <!-- คอลัมน์ครึ่งหนึ่งของหน้าจอสำหรับคนที่สอง -->
+          <a class="profile-card profile-card-alt" href="portfolio-two.html">
+            <!-- การ์ดทั้งใบเป็นลิงก์ไปหน้าโปรไฟล์คนที่สอง; alt ใช้สีพื้นต่างกัน -->
+            <img src="images/kawinphet-profile.png" alt="Kawinphet Choowaree">
+            <!-- รูปโปรไฟล์ของ Kawinphet -->
+            <span class="profile-card-content">
+              <!-- กล่องข้อความในบัตรโปรไฟล์คนที่สอง -->
+              <span class="card-label">Electrical Engineering Student</span>
+              <!-- ป้ายบอกสถานะการศึกษา -->
+              <span class="card-name">Kawinphet Choowaree</span>
+              <!-- ชื่อของเจ้าของโปรไฟล์ -->
+              <span class="card-action">Open portfolio <span aria-hidden="true">→</span></span>
+              <!-- ข้อความชวนกดไปยังหน้าโปรไฟล์ -->
+            </span>
+            <!-- จบกล่องข้อความในบัตร -->
+          </a>
+          <!-- จบลิงก์โปรไฟล์คนที่สอง -->
+        </div>
+        <!-- จบคอลัมน์คนที่สอง -->
+      </section>
+      <!-- จบรายการลิงก์โปรไฟล์ -->
+    </main>
+    <!-- จบเนื้อหาหลัก -->
+  </body>
+  <!-- จบส่วนที่แสดงผลของหน้าเว็บ -->
+</html>
+<!-- จบเอกสาร HTML -->

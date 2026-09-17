@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- ใช้มาตรฐาน HTML5 -->
+<html lang="en">
+  <!-- ภาษาหลักของเนื้อหาเป็นอังกฤษ -->
+  <head>
+    <!-- ส่วนตั้งค่าของหน้าเว็บ -->
+    <meta charset="utf-8">
+    <!-- รองรับ UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ทำให้หน้าเว็บ responsive บนมือถือ -->
+    <title>Rungarun Fongkerd - Electrical Engineer</title>
+    <!-- ชื่อที่แสดงบนแท็บเบราว์เซอร์ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ใช้ Bootstrap เฉพาะ CSS สำหรับ grid และ utility classes -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- ใช้ CSS หลักที่เขียนเอง -->
+  </head>
+  <body>
+    <!-- เนื้อหาที่แสดงบนหน้าเว็บ -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <!-- เมนู sticky; aria-label ระบุบทบาทของเมนูให้โปรแกรมอ่านหน้าจอ -->
+      <a class="brand" href="index.html">Portfolio</a>
+      <!-- ลิงก์กลับหน้าแรก -->
+      <div class="nav-links">
+        <!-- กลุ่มลิงก์กระโดดไปยังแต่ละส่วนในหน้าเดียว -->
+        <a href="#about">About</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#projects">Selected Projects</a>
+        <a href="#field-experience">Field Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <!-- จบกลุ่มลิงก์เมนู -->
+    </nav>
+    <!-- จบเมนูนำทาง -->
+
+    <main>
+      <!-- เนื้อหาหลักของโปรไฟล์ -->
+      <section class="hero" id="about">
+        <!-- ส่วน About; id ใช้เป็นจุดหมายของเมนู About -->
+        <div class="container hero-grid">
+          <!-- container จำกัดความกว้าง; hero-grid วางข้อความกับรูปเป็นสองคอลัมน์ -->
+          <div>
+            <!-- คอลัมน์ข้อความแนะนำตัว -->
+            <p class="eyebrow">ELECTRICAL ENGINEERING STUDENT</p>
+            <h1>Rungarun<br>Fongkerd</h1>
+            <p class="hero-copy">I am an Electrical Engineering student at KMITL. I enjoy learning through practical work, especially electrical design, transformer monitoring, and motor testing.</p>
+            <a class="button-link" href="#showcase">View my projects</a>
+            <!-- ปุ่มเลื่อนไปส่วน Showcase -->
+          </div>
+          <img class="profile-image" src="images/rungarun-profile.jpg" alt="Rungarun Fongkerd">
+          <!-- รูปโปรไฟล์; alt อธิบายรูปเมื่อแสดงรูปไม่ได้ -->
+        </div>
+      </section>
+      <!-- จบส่วน About -->
+
+      <section class="content-section" id="showcase">
+        <!-- ส่วน Showcase ที่รวมคุณวุฒิ ทักษะ และผลงาน -->
+        <div class="container">
+          <!-- จำกัดความกว้างเนื้อหาให้อ่านง่าย -->
+          <p class="eyebrow">SHOWCASE</p>
+          <h2>About my work</h2>
+          <div class="row g-4 mt-1">
+            <!-- แถว Bootstrap สำหรับการ์ด Education, Skills และ Experience -->
+            <div class="col-md-4"><article class="showcase-card"><h3>Education</h3><p>B.Eng. Electrical Engineering, King Mongkut’s Institute of Technology Ladkrabang (KMITL), 2023 - expected 2027. GPA 2.75.</p></article></div>
+            <div class="col-md-4"><article class="showcase-card"><h3>Skills</h3><p>Electrical design with AutoCAD, Python, current sensors, web dashboards, hands-on measurement, testing, and motor assembly.</p></article></div>
+            <div class="col-md-4"><article class="showcase-card"><h3>Experience</h3><p>Electrical Engineering Intern at CC Transformer, May - August 2026. Four months of practical workplace experience.</p></article></div>
+          </div>
+
+          <div class="tools-row" aria-label="Tools and technologies">
+            <!-- แท็กแสดงเครื่องมือและเทคโนโลยี; aria-label บอกความหมายของกลุ่ม -->
+            <span>AutoCAD</span>
+            <span>Python</span>
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>HTML &amp; CSS</span>
+            <span>Current Sensors</span>
+          </div>
+          <!-- จบแท็กทักษะ -->
+
+          <div class="project-heading" id="projects"><p class="eyebrow">SELECTED PROJECTS</p><h2>Projects I have worked on</h2></div>
+          <!-- หัวข้อผลงาน; id เชื่อมกับแท็บ Selected Projects -->
+          <div class="row g-4 mt-1">
+            <!-- แถวการ์ดผลงานที่เลือกมาแสดง -->
+            <div class="col-md-6"><article class="project-card"><img src="images/office-building.png" alt="Electrical design drawing for an office building"><div><h3>12-Story Office Building Electrical Design</h3><p>Designed an electrical system for a 12-story office building using AutoCAD.</p></div></article></div>
+            <div class="col-md-6"><article class="project-card"><img src="images/partial-discharge.png" alt="Electric motor partial discharge testing"><div><h3>Partial Discharge Testing on Haval H6 Electric Motor</h3><p>Performed hands-on measurement and testing for an electric motor.</p></div></article></div>
+            <div class="col-md-6"><article class="project-card"><img src="images/transformer-monitoring.jpg" alt="Transformer current monitoring project"><div><h3>Transformer Current Imbalance Monitoring</h3><p>Built a monitoring and web alert system with Python, current sensors, and a web dashboard.</p></div></article></div>
+            <div class="col-md-6"><article class="project-card"><img src="images/ac-motor-winding.jpg" alt="AC motor assembly and coil winding project"><div><h3>AC Motor Assembly & Coil Winding</h3><p>Completed practical AC motor assembly and coil winding work.</p></div></article></div>
+          </div>
+
+          <div class="project-heading" id="field-experience"><p class="eyebrow">FIELD EXPERIENCE</p><h2>Internship experience</h2></div>
+          <!-- หัวข้อประสบการณ์ภาคสนาม; id เชื่อมกับแท็บ Field Experience -->
+          <article class="feature-card mt-4">
+            <!-- การ์ดเด่นสำหรับข้อมูลฝึกงาน -->
+            <img src="images/cc-transformer-internship.jpg" alt="Rungarun during internship at CC Transformer">
+            <div><h3>CC Transformer</h3><p>Electrical Engineering Intern · May - August 2026</p><p>Four months of practical workplace experience in electrical engineering.</p></div>
+          </article>
+
+          <div class="project-heading"><p class="eyebrow">CERTIFICATES</p><h2>Courses and certificates</h2></div>
+          <!-- หัวข้อแสดงใบประกาศนียบัตรเพิ่มเติม -->
+          <div class="certificate-grid mt-4">
+            <!-- grid สำหรับแสดงรูป certificate หลายใบ -->
+            <figure><img src="images/certificates/kmitl-masterclass.jpg" alt="KMITL Masterclass AI for Everyone certificate"><figcaption>AI for Everyone<br><span>KMITL Masterclass - KLIX</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-01.png" alt="Excel Exploratory Data Analysis certificate"><figcaption>Excel Exploratory Data Analysis<br><span>29 Jan 2026</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-02.png" alt="Power Query in Power BI certificate"><figcaption>Power Query in Power BI<br><span>14 Feb 2026</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-03.png" alt="Power BI report publishing certificate"><figcaption>Power BI Report Publishing<br><span>8 Mar 2026</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-04.png" alt="Excel data analysis certificate"><figcaption>Excel Data Analysis<br><span>10 Jan 2026</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-05.png" alt="Excel Pivot Table and Pivot Chart certificate"><figcaption>Excel PivotTable &amp; PivotChart<br><span>8 Feb 2026</span></figcaption></figure>
+            <figure><img src="images/certificates/certificate-06.png" alt="Power BI data visualization certificate"><figcaption>Power BI Data Visualization<br><span>1 Mar 2026</span></figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <!-- จบส่วน Showcase -->
+
+      <section class="content-section contact-section" id="contact">
+        <!-- ส่วน Contact; พื้นหลังต่างจากเนื้อหาปกติเพื่อแบ่งตอนท้ายหน้า -->
+        <div class="container">
+          <!-- จำกัดความกว้างข้อมูลติดต่อ -->
+          <p class="eyebrow">CONTACT</p>
+          <h2>Let’s connect.</h2>
+          <p>Thai (native) · English (basic) · <a href="mailto:rungarun.tum8759@gmail.com">rungarun.tum8759@gmail.com</a></p>
+          <div class="contact-links"><a href="https://github.com/FWC-rfongker/FWC-rfongker" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/rungarun-fongkerd-619706422" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/tum_rrfg" target="_blank" rel="noreferrer">Instagram</a></div>
+          <!-- ลิงก์ภายนอกเปิดแท็บใหม่; rel=noreferrer ลดการส่งข้อมูล referrer -->
+        </div>
+      </section>
+    </main>
+    <!-- จบเนื้อหาหลัก -->
+  </body>
+  <!-- จบส่วนที่แสดงผล -->
+</html>
+<!-- จบเอกสาร HTML -->

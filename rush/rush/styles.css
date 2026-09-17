@@ -1,0 +1,205 @@
+/* สีที่ใช้ซ้ำทั้งเว็บ เก็บเป็น CSS variables เพื่อแก้สีได้จากจุดเดียว */
+:root {
+  /* สีดำหลักของข้อความ */
+  --black: #1d1d1f;
+  --gray: #6e6e73;
+  --line: #d2d2d7;
+  --surface: #f5f5f7;
+  --blue: #0071e3;
+  --white: #ffffff;
+}
+
+/* ทำให้ width/height รวม padding และ border เพื่อคำนวณขนาดง่ายขึ้น */
+* { box-sizing: border-box; }
+/* เลื่อนหา section อย่างนุ่มนวล และเว้นด้านบนให้ไม่ถูกเมนู sticky บัง */
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+/* ตั้งค่าหน้ากระดาษ สี และฟอนต์หลักของเว็บ */
+body { margin: 0; background: var(--white); color: var(--black); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+/* ให้ลิงก์รับสีจาก parent เป็นค่าเริ่มต้น */
+a { color: inherit; }
+/* ล้าง margin ด้านบนเริ่มต้นของหัวเรื่องและย่อหน้า */
+h1, h2, h3, p { margin-top: 0; }
+/* รูปแบบมาตรฐานของหัวเรื่องระดับ 1; clamp ทำให้ขนาดยืดหยุ่นตามจอ */
+h1 { font-size: clamp(3.3rem, 8.3vw, 7.7rem); font-weight: 700; letter-spacing: -.065em; line-height: .94; }
+/* รูปแบบมาตรฐานของหัวเรื่องระดับ 2 */
+h2 { font-size: clamp(2.4rem, 5vw, 4.3rem); font-weight: 700; letter-spacing: -.055em; line-height: 1.02; }
+/* ปรับระยะตัวอักษรของหัวเรื่องระดับ 3 */
+h3 { letter-spacing: -.025em; }
+/* ป้ายตัวพิมพ์ใหญ่ขนาดเล็กเหนือหัวเรื่อง */
+.eyebrow { margin-bottom: .85rem; color: var(--gray); font-size: .82rem; font-weight: 600; letter-spacing: .08em; }
+/* รูปแบบข้อความเกริ่นและคำแนะนำตัว */
+.lead, .hero-copy { color: var(--gray); font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.45; }
+
+/* ===== หน้าแรก: Summary page ===== */
+/* กรอบรวมของหน้าแรก จำกัดความกว้างและกำหนดระยะบน/ล่าง */
+.landing-shell { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; padding: clamp(3.75rem, 9vw, 7rem) 0 3rem; }
+/* จำกัดความกว้างส่วนเกริ่นให้อ่านง่าย */
+.intro { width: min(720px, 100%); margin: 0 auto clamp(2.25rem, 5vw, 3.5rem); }
+/* ปรับป้ายเล็กในส่วนเกริ่น */
+.intro .eyebrow { margin-bottom: .65rem; color: var(--gray); }
+/* เว้นช่องว่างใต้หัวเรื่องหน้าแรก */
+.intro h1 { margin-bottom: .8rem; }
+/* ขนาดเฉพาะของคำว่า PORTFOLIO */
+.landing-title { font-size: clamp(3rem, 7vw, 5.25rem); line-height: .95; }
+/* จำกัดความยาวและจัดข้อความเกริ่นไว้กึ่งกลาง */
+.intro .lead { max-width: 38rem; margin-inline: auto; font-size: clamp(1rem, 1.6vw, 1.12rem); }
+/* ยืดการ์ดสองใบให้มีความสูงเท่ากัน */
+.profile-links { margin: 0; align-items: stretch; }
+/* ทำให้คอลัมน์ Bootstrap ยืดการ์ดภายในได้เต็มความสูง */
+.profile-links > div { display: flex; }
+/* รูปแบบการ์ดโปรไฟล์: flex, กรอบโค้ง และกำหนดความสูงเท่ากัน */
+.profile-card { position: relative; display: flex; width: 100%; height: 340px; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: #f1f1f3; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+/* ยกการ์ดและเพิ่มเงาเมื่อวางเมาส์ */
+.profile-card:hover { color: inherit; transform: translateY(-3px); box-shadow: 0 10px 24px rgb(0 0 0 / .1); }
+/* เปลี่ยนสีพื้นเล็กน้อยให้การ์ดคนที่สอง */
+.profile-card-alt { background: #f5f5f7; }
+/* รูปกินพื้นที่ 46% และครอปให้เต็มด้านซ้ายของการ์ด */
+.profile-card img { display: block; width: 46%; height: 100%; object-fit: cover; object-position: center 25%; }
+/* ปรับตำแหน่งครอปรูปของการ์ดคนที่สอง */
+.profile-card-alt img { object-fit: cover; object-position: center 18%; }
+/* กล่องข้อความกินพื้นที่ที่เหลือและจัดเนื้อหาแนวตั้ง */
+.profile-card-content { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 1.75rem; color: var(--black); }
+/* ยืนยันสีข้อความการ์ดแบบ alternate */
+.profile-card-alt .profile-card-content { color: var(--black); }
+/* รูปแบบป้ายบอกสถานะในบัตร */
+.card-label { font-size: .78rem; font-weight: 600; letter-spacing: .08em; }
+/* รูปแบบชื่อในบัตร; clamp ปรับขนาดตามหน้าจอ */
+.card-name { margin-top: .45rem; font-size: clamp(1.45rem, 2.5vw, 1.8rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; }
+/* ดันข้อความ Open portfolio ไปไว้ด้านล่างของการ์ด */
+.card-action { margin-top: auto; font-size: 1rem; font-weight: 500; }
+
+/* ===== หน้าพอร์ตโฟลิโอทั้งสองหน้า ===== */
+/* เมนู sticky ติดด้านบนขณะเลื่อน พร้อมพื้นหลังโปร่งและ blur */
+.site-nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.2rem; padding: .6rem max(1.25rem, calc((100% - 1000px) / 2)); border-bottom: 1px solid rgb(210 210 215 / .65); background: rgb(255 255 255 / .76); backdrop-filter: saturate(180%) blur(20px); }
+/* รูปแบบชื่อ Portfolio ในเมนู */
+.brand { font-size: .9rem; font-weight: 650; letter-spacing: -.01em; text-decoration: none; }
+/* แถบลิงก์เมนูไม่ตัดบรรทัด และเลื่อนแนวนอนได้เมื่อพื้นที่ไม่พอ */
+.nav-links { display: flex; flex-wrap: nowrap; justify-content: end; min-width: 0; gap: .7rem 1.2rem; overflow-x: auto; scrollbar-width: none; }
+/* ซ่อนแถบเลื่อนของ Safari/Chrome แต่ยังปัดได้ */
+.nav-links::-webkit-scrollbar { display: none; }
+/* ทำให้ลิงก์แต่ละอันมีความกว้างตามข้อความและไม่ถูกตัด */
+.nav-links a { flex: 0 0 auto; color: var(--black); font-size: .78rem; text-decoration: none; white-space: nowrap; }
+/* เปลี่ยนสีลิงก์เมนูเมื่อวางเมาส์ */
+.nav-links a:hover { color: var(--blue); }
+/* ส่วนเปิดหน้าโปรไฟล์ */
+.hero { overflow: hidden; padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); background: var(--surface); }
+/* สีพื้นแบบ alternate สำหรับโปรไฟล์คนที่สอง */
+.hero-alt { background: #fbfbfd; }
+/* วางข้อความและรูปเป็น grid สองคอลัมน์ */
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(2rem, 8vw, 9rem); }
+/* ขนาดหัวเรื่องชื่อใน hero */
+.hero h1 { margin-bottom: 1.2rem; font-size: clamp(3.2rem, 7vw, 6rem); }
+/* จำกัดความยาวและเพิ่มระยะใต้ข้อความแนะนำตัว */
+.hero-copy { max-width: 37rem; margin-bottom: 1.7rem; }
+/* ครอปรูปโปรไฟล์เป็นวงกลมและใส่เงา */
+.profile-image { width: min(100%, 390px); aspect-ratio: 1; justify-self: end; border-radius: 50%; background: #e8e8ed; box-shadow: 0 25px 60px rgb(0 0 0 / .14); object-fit: cover; object-position: center 22%; }
+/* รูปแบบปุ่มลิงก์หลัก */
+.button-link { display: inline-block; padding: .72rem 1.25rem; border-radius: 980px; background: var(--blue); color: white; font-size: 1rem; font-weight: 500; text-decoration: none; transition: background .2s ease; }
+/* สีปุ่มเมื่อวางเมาส์ */
+.button-link:hover { background: #0077ed; color: white; }
+/* คลาสเสริมสำหรับปุ่มโปรไฟล์ที่สอง */
+.button-link-alt { background: var(--blue); }
+/* ระยะห่างแนวตั้งมาตรฐานของแต่ละ section */
+.content-section { padding: clamp(4rem, 9vw, 8rem) 0; }
+/* การ์ดสำหรับข้อมูล Education, Skills และ Experience */
+.showcase-card { height: 100%; padding: 1.7rem; border-radius: 1.35rem; background: var(--surface); }
+/* ขนาดหัวข้อย่อยในการ์ด Showcase */
+.showcase-card h3 { font-size: 1.2rem; font-weight: 650; }
+/* สีและระยะบรรทัดของคำอธิบายในการ์ดและ Contact */
+.showcase-card p, .contact-section > .container > p { margin-bottom: 0; color: var(--gray); line-height: 1.55; }
+/* แถว flex ที่รวมแท็กทักษะและอนุญาตให้ขึ้นบรรทัดใหม่ */
+.tools-row { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.5rem; }
+/* รูปแบบแท็กทักษะแต่ละอัน */
+.tools-row span { display: inline-flex; align-items: center; gap: .48rem; padding: .55rem .9rem; border: 1px solid var(--line); border-radius: 980px; color: var(--black); font-size: .92rem; font-weight: 500; }
+/* สีไอคอนในแท็ก (เก็บไว้รองรับการใช้งานในอนาคต) */
+.tools-row i { color: var(--blue); font-size: 1rem; }
+/* ลดช่องว่างเมื่อมีไอคอนต่อกันสองตัว */
+.tools-row i + i { margin-left: -.25rem; }
+/* ระยะบนก่อนหัวข้อ Projects, Field Experience และ Certificates */
+.project-heading { margin-top: clamp(4.5rem, 10vw, 9rem); }
+/* การ์ดผลงานที่ตัดส่วนเกินของรูปและมีมุมโค้ง */
+.project-card { height: 100%; overflow: hidden; border-radius: 1.35rem; background: var(--surface); }
+/* รูปในบัตรผลงานเต็มความกว้างและครอปให้สูงเท่ากัน */
+.project-card img { display: block; width: 100%; height: 260px; object-fit: cover; }
+/* ระยะขอบด้านในของเนื้อหาบัตรผลงาน */
+.project-card div { padding: 1.55rem; }
+/* รูปแบบชื่อผลงาน */
+.project-card h3 { font-size: 1.25rem; font-weight: 650; }
+/* สีและระยะบรรทัดคำอธิบายผลงาน */
+.project-card p { margin-bottom: 0; color: var(--gray); line-height: 1.55; }
+/* เครดิตแหล่งที่มาของรูปมีขนาดเล็กกว่าข้อความปกติ */
+.project-card .image-credit { margin-top: .85rem; font-size: .76rem; line-height: 1.4; }
+/* ทำให้ลิงก์ในเครดิตเป็นสีน้ำเงิน */
+.image-credit a { color: var(--blue); }
+/* การ์ดข้อความล้วน (ยังไม่มีการใช้งานในหน้าเวอร์ชันนี้) */
+.project-card-text { display: grid; place-items: center; min-height: 220px; background: #1d1d1f; color: white; }
+/* สีข้อความภายในการ์ดข้อความล้วน */
+.project-card-text p { color: #d2d2d7; }
+/* การ์ดเด่นที่มีรูปด้านหนึ่งและข้อความอีกด้านหนึ่ง */
+.feature-card { display: grid; grid-template-columns: minmax(230px, .9fr) 1.1fr; overflow: hidden; border-radius: 1.35rem; background: var(--surface); }
+/* รูปในการ์ดเด่นเต็มช่องรูป */
+.feature-card img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; }
+/* จัดข้อความในการ์ดเด่นให้อยู่กึ่งกลางแนวตั้ง */
+.feature-card div { align-self: center; padding: clamp(1.7rem, 5vw, 4rem); }
+/* ขนาดหัวเรื่องในการ์ดเด่น */
+.feature-card h3 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; }
+/* รูปแบบย่อหน้าในการ์ดเด่น */
+.feature-card p { color: var(--gray); font-size: 1.05rem; line-height: 1.6; }
+/* grid สามคอลัมน์สำหรับ certificate บนจอใหญ่ */
+.certificate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+/* กรอบแต่ละ certificate พร้อมเงาและมุมโค้ง */
+.certificate-grid figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: .9rem; background: white; box-shadow: 0 7px 22px rgb(0 0 0 / .07); }
+/* แสดงรูป certificate โดยไม่ตัดเนื้อหาในรูป */
+.certificate-grid img { display: block; width: 100%; aspect-ratio: 1.45; object-fit: contain; }
+/* ข้อความใต้รูป certificate */
+.certificate-grid figcaption { padding: .85rem .9rem; font-size: .9rem; font-weight: 600; line-height: 1.35; }
+/* ข้อความรายละเอียดรองใน caption */
+.certificate-grid figcaption span { color: var(--gray); font-size: .8rem; font-weight: 400; }
+/* พื้นหลังเข้มของส่วน Contact */
+.contact-section { background: var(--black); color: var(--white); }
+/* ป้าย eyebrow ใน Contact ใช้สีเทาอ่อน */
+.contact-section .eyebrow { color: #a1a1a6; }
+/* ข้อความติดต่อทั่วไปใช้สีเทาอ่อน */
+.contact-section > .container > p { color: #a1a1a6; }
+/* อีเมลและลิงก์ในย่อหน้า Contact เป็นสีขาว */
+.contact-section p a { color: white; }
+/* แถวลิงก์โซเชียลที่ยืดและขึ้นบรรทัดใหม่ได้ */
+.contact-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+/* รูปแบบปุ่มลิงก์โซเชียล */
+.contact-links a { padding: .65rem 1rem; border: 1px solid #6e6e73; border-radius: 980px; color: white; font-size: .95rem; text-decoration: none; }
+/* กลับสีปุ่มโซเชียลเมื่อวางเมาส์ */
+.contact-links a:hover { border-color: white; background: white; color: var(--black); }
+
+/* ===== กฎเฉพาะมือถือ: ทำงานเมื่อความกว้างไม่เกิน 640px ===== */
+@media (max-width: 640px) {
+  /* ลดขนาดหัวเรื่องหลักเพื่อไม่ให้ล้นจอ */
+  h1 { font-size: clamp(3.25rem, 15vw, 5rem); }
+  /* ลดขอบด้านข้างของหน้าแรกบนมือถือ */
+  .landing-shell { width: min(100% - 1.25rem, 1280px); padding-top: 4.5rem; }
+  /* ให้การ์ดโปรไฟล์สูงตามเนื้อหา แต่ไม่น้อยกว่า 420px */
+  .profile-card { height: auto; min-height: 420px; }
+  /* วางรูปเหนือข้อความในบัตรบนมือถือ */
+  .profile-card { flex-direction: column; }
+  /* ให้รูปและข้อความใช้ความกว้างเต็มการ์ด */
+  .profile-card img, .profile-card-content { width: 100%; }
+  /* กำหนดความสูงรูปในบัตรให้คงที่ */
+  .profile-card img { min-height: 230px; height: 230px; }
+  /* วางชื่อแบรนด์เหนือแถบลิงก์บนมือถือ */
+  .site-nav { display: block; padding-block: .65rem; }
+  /* ทำให้แบรนด์เป็น block และเว้นระยะก่อนเมนู */
+  .brand { display: block; margin-bottom: .55rem; }
+  /* เมนูอยู่บรรทัดเดียวและปัดแนวนอนได้ */
+  .nav-links { justify-content: start; width: 100%; padding-bottom: .2rem; -webkit-overflow-scrolling: touch; }
+  /* เปลี่ยน hero เป็นคอลัมน์เดียว */
+  .hero-grid { grid-template-columns: 1fr; }
+  /* ลดขนาดรูปวงกลมและจัดกลางบนมือถือ */
+  .profile-image { width: min(82%, 320px); justify-self: center; }
+  /* ลดความสูงรูปผลงานบนมือถือ */
+  .project-card img { height: 220px; }
+  /* เปลี่ยนการ์ดเด่นเป็นรูปเหนือข้อความ */
+  .feature-card { grid-template-columns: 1fr; }
+  /* จำกัดความสูงรูปในการ์ดเด่น */
+  .feature-card img { min-height: 220px; max-height: 300px; }
+  /* แสดง certificate สองคอลัมน์บนมือถือ */
+  .certificate-grid { grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+}
