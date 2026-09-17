@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; background-color: #f3f4f6; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        input, select { padding: 8px 12px; margin: 4px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <input type="text" id="leftNum" placeholder="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightNum" placeholder="0">
+        <input type="submit" id="submitBtn" value="Try me!">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function isPositiveInteger(str) {
+                return /^\d+$/.test($.trim(str));
+            }
+
+            $('#submitBtn').click(function() {
+                const leftVal = $('#leftNum').val();
+                const rightVal = $('#rightNum').val();
+
+                if (!isPositiveInteger(leftVal) || !isPositiveInteger(rightVal)) {
+                    alert('Error :(');
+                    return;
+                }
+
+                const left = parseInt(leftVal, 10);
+                const right = parseInt(rightVal, 10);
+                const op = $('#operator').val();
+
+                if ((op === '/' || op === '%') && right === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                }
+
+                let res = 0;
+                if (op === '+') res = left + right;
+                if (op === '-') res = left - right;
+                if (op === '*') res = left * right;
+                if (op === '/') res = left / right;
+                if (op === '%') res = left % right;
+
+                alert(res);
+                console.log(res);
+            });
+
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
