@@ -2,19 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Discovery Piscine Navigation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery Piscine Dashboard</title>
 <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f9f9f9; }
-    .menu { display: inline-block; text-align: left; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    a { display: block; margin: 12px 0; font-size: 18px; color: #2563eb; text-decoration: none; font-weight: bold; }
-    a:hover { text-decoration: underline; }
+    body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; margin: 0; padding: 40px 20px; color: #1e293b; }
+    .container { max-width: 900px; margin: 0 auto; background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    h1 { text-align: center; color: #0f172a; margin-bottom: 24px; font-size: 28px; font-weight: 700; }
+    .cell-group { margin-bottom: 28px; }
+    .cell-title { font-size: 20px; font-weight: 700; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 14px; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .card { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 16px; text-decoration: none; color: #334155; font-weight: 600; font-size: 15px; text-align: center; transition: all 0.2s ease-in-out; }
+    .card:hover { background: #2563eb; color: #ffffff; border-color: #2563eb; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
 </style>
 </head>
 <body>
-<div class="menu">
-    <h2>Discovery Piscine Navigation</h2>
-    <a href="rush/__MACOSX/rush/._index.html">Rush Project</a>
-    <a href="cell02/ex03/card.html">Cell 02 Ex 03: Profile Card</a>
+<div class="container">
+    <h1>Discovery Piscine Dashboard</h1>
+        <div class="cell-group">
+            <div class="cell-title">cell01</div>
+            <div class="grid">
+                <a class="card" href="cell01/ex00/helloworld.html">ex00/helloworld.html</a>
+                <a class="card" href="cell01/ex01/piscineweb.html">ex01/piscineweb.html</a>
+                <a class="card" href="cell01/ex02/piscineweb.html">ex02/piscineweb.html</a>
+                <a class="card" href="cell01/ex03/piscineweb.html">ex03/piscineweb.html</a>
+                <a class="card" href="cell01/ex04/basics.html">ex04/basics.html</a>
+                <a class="card" href="cell01/ex05/tab.html">ex05/tab.html</a>
+                <a class="card" href="cell01/ex06/responsive.html">ex06/responsive.html</a>
+            </div>
+        </div>
+        <div class="cell-group">
+            <div class="cell-title">cell02</div>
+            <div class="grid">
+                <a class="card" href="cell02/ex00/responsive.html">ex00/responsive.html</a>
+                <a class="card" href="cell02/ex01/menu.html">ex01/menu.html</a>
+                <a class="card" href="cell02/ex02/parallax.html">ex02/parallax.html</a>
+                <a class="card" href="cell02/ex03/card.html">ex03/card.html</a>
+            </div>
+        </div>
+        <div class="cell-group">
+            <div class="cell-title">cell03</div>
+            <div class="grid">
+                <a class="card" href="cell03/ex00/background.html">ex00/background.html</a>
+                <a class="card" href="cell03/ex00bis/index.html">ex00bis/index.html</a>
+                <a class="card" href="cell03/ex01/balloon.html">ex01/balloon.html</a>
+                <a class="card" href="cell03/ex01bis/index.html">ex01bis/index.html</a>
+                <a class="card" href="cell03/ex02/calc.html">ex02/calc.html</a>
+                <a class="card" href="cell03/ex02bis/calc.html">ex02bis/calc.html</a>
+                <a class="card" href="cell03/ex03/index.html">ex03/index.html</a>
+                <a class="card" href="cell03/ex03bis/index.html">ex03bis/index.html</a>
+            </div>
+        </div>
+        <div class="cell-group">
+            <div class="cell-title">rush</div>
+            <div class="grid">
+                <a class="card" href="rush/__MACOSX/rush/._index.html">__MACOSX/rush/._index.html</a>
+                <a class="card" href="rush/__MACOSX/rush/._portfolio-one.html">__MACOSX/rush/._portfolio-one.html</a>
+                <a class="card" href="rush/__MACOSX/rush/._portfolio-two.html">__MACOSX/rush/._portfolio-two.html</a>
+                <a class="card" href="rush/rush/index.html">rush/index.html</a>
+                <a class="card" href="rush/rush/portfolio-one.html">rush/portfolio-one.html</a>
+                <a class="card" href="rush/rush/portfolio-two.html">rush/portfolio-two.html</a>
+            </div>
+        </div>
 </div>
 </body>
 </html>
